@@ -67,8 +67,8 @@ struct ConstStrArray{
 		strcpy(arrays.array + strpos[strpos.size - 1],input);
 	}
 	void Del(int pos){
-		int moveSize = arrays.size - strpos[pos + 1] - strlen(arrays.array + strpos[pos + 1]) - 1;
 		int removeStrSize = strlen(arrays.array + strpos[pos + 1]) + 1;
+		int moveSize = arrays.size - strpos[pos + 1] - removeStrSize;
 		memcpy(arrays.array + strpos[pos + 1],arrays.array + strpos[pos + 1] + removeStrSize,moveSize);
 		
 		for (int i = pos + 1;i < strpos.size;i++)
